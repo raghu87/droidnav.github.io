@@ -28,6 +28,7 @@
       //https://webflow.com/templates/search-results#stq=blog
       //https://vakila.github.io/
     </script>
+    <br>
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -265,11 +266,17 @@
       </div>
       <a href="https://wa.me" id="whatsappLink" target="whatsapp" style="display: none;">Link</a>
     </div>
+    <br>
     <script>
       document.getElementById("getWhatsAppLink").addEventListener("click", function (e) {
         var countryCode = document.getElementById("countryCode").value;
         var phoneNo = document.getElementById("phoneNo").value;
-        var link = "https://wa.me/+" + countryCode + phoneNo;
+        var link = "https://wa.me/+";
+        if(phoneNo.match(new RegExp(countryCode,"gi"))) {
+          link+= phoneNo;
+        } else {
+          link+=countryCode + phoneNo;
+        }
         console.log(link)
         var element = document.getElementById('whatsappLink');
         if (typeof (element) != 'undefined' && element != null) {
