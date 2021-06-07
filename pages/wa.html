@@ -256,7 +256,7 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <label>Enter Phone Number:</label><input type="number" id="phoneNo" />
+          <label>Enter Phone Number: (Remove Country code) </label><input type="number" id="phoneNo" />
         </div>
       </div>
       <div class="row">
@@ -269,14 +269,15 @@
     <br>
     <script>
       document.getElementById("getWhatsAppLink").addEventListener("click", function (e) {
-        var countryCode = "+"+document.getElementById("countryCode").value;
+        var countryCode = document.getElementById("countryCode").value;
         var phoneNo = document.getElementById("phoneNo").value;
         var link = "https://wa.me/";
-        if(phoneNo.match(new RegExp(countryCode,"gi"))) {
-          link+= phoneNo;
-        } else {
-          link+=countryCode + phoneNo;
-        }
+        // if(phoneNo.match("\+"+countryCode)) {
+        //   link+= phoneNo;
+        // } else {
+        //   link+="+"+countryCode + phoneNo;
+        // }
+        link+= "+" + countryCode + phoneNo;
         console.log(link)
         var element = document.getElementById('whatsappLink');
         if (typeof (element) != 'undefined' && element != null) {
