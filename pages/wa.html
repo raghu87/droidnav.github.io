@@ -269,9 +269,9 @@
     <br>
     <script>
       document.getElementById("getWhatsAppLink").addEventListener("click", function (e) {
-        var countryCode = document.getElementById("countryCode").value;
+        var countryCode = "+"+document.getElementById("countryCode").value;
         var phoneNo = document.getElementById("phoneNo").value;
-        var link = "https://wa.me/+";
+        var link = "https://wa.me/";
         if(phoneNo.match(new RegExp(countryCode,"gi"))) {
           link+= phoneNo;
         } else {
