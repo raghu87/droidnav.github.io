@@ -1,0 +1,9 @@
+.container {
+    background-color: var(--bg);
+    color: var(--text);
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+}
