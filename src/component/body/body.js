@@ -15,9 +15,10 @@ const Body = ({error, about, contact}) => {
 
   useEffect(() => {
       setdomainname(window.location.hostname);
-      // if(process.env.NODE_ENV === "production" && window.location.hostname.match(/droidnav.com/)) {
-      //   setShowAdSense(true);
-      // }
+      // process.env.NODE_ENV === "production" && 
+      if(window.location.hostname.match(/droidnav.com/)) {
+        setShowAdSense(true);
+      }
   }, []);
 
   const headerDomain = checkLogoPattern(domainname);
